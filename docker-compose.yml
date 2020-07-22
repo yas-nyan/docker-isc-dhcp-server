@@ -5,9 +5,9 @@ services:
     build: ./dhcpd
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./dhcpd/dhcp:/etc/dhcp/
+      - ./config/etc/dhcp:/etc/dhcp/
       # Optional: define listening interface
-      # - ./dhcpd/etc/default:/etc/default/isc-dhcp-server
+      # - ./config/etc/default/isc-dhcp-server:/etc/default/isc-dhcp-server
       - isc-dhcp-leases:/var/lib/dhcp/
     network_mode: "host"
     restart: always
